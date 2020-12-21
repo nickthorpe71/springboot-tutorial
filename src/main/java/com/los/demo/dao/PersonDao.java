@@ -25,5 +25,5 @@ public interface PersonDao { //DAO stands for Data Access Object
     int deletePersonById(UUID id);
 
     // used for update
-    int updatePersonById(UUID id);
+    int updatePersonById(UUID id, Person person);
 }
