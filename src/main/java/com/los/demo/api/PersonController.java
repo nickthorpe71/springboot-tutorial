@@ -2,6 +2,7 @@ package com.los.demo.api;
 
 import com.los.demo.model.Person;
 import com.los.demo.service.PersonService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@RequestBody Person person){
+    public void addPerson(@NotNull @RequestBody Person person){
         personService.addPerson(person);
     }
 
@@ -41,7 +42,7 @@ public class PersonController {
     }
 
     @PutMapping(path = "{id}")
-    public void updatePerson(@PathVariable("id") UUID id, @RequestBody Person personToUpdate){
+    public void updatePerson(@PathVariable("id") UUID id, @NotNull @RequestBody Person personToUpdate){
         personService.updatePerson(id, personToUpdate);
     }
 

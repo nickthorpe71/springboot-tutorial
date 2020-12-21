@@ -1,11 +1,14 @@
 package com.los.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
 public class Person {
     private final UUID id;
+
+    @NotNull
     private final String name;
 
     public Person(@JsonProperty("id")UUID id,
